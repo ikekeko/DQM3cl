@@ -4,27 +4,27 @@
         padding: 10px 30px;
     }
     form dl dt {
-        width: 200px;
-        height: 40px;
-        padding: 10px 0;
-        line-height: 40px;
+        width: 400px;
+        height: 80px;
+        padding: 20px 0;
+        line-height: 80px;
         float: left;
     }
     form dl dd {
-        padding: 10px 0;
+        padding: 20px 0;
         margin: 0;
     }
     .box {
         box-sizing: border-box;
-        width: 150px !important;
-        height: 40px !important;
+        width: 300px !important;
+        height: 80px !important;
         margin: 0 !important;
-        padding: 0 10px !important;
+        padding: 0 20px !important;
     }
     .calc-btn {
-        width: 80px;
-        height: 30px;
-        border: 1px solid #333;
+        width: 160px;
+        height: 60px;
+        border: 2px solid #333;
     }
     .calc-btn:hover {
         cursor: pointer;
@@ -33,7 +33,7 @@
     <form class="size_form">
         <dl>
             <dt>守備力実数値：</dt>
-            <dd><input type="number" class="box" name="jissuu"></dd>
+            <dd><input type="number" class="box" name="syubi"></dd>
             <dt>守備力基礎値：</dt>
             <dd><input type="number" class="box" name="kiso"></dd>
             <dt>行動回数補正：</dt>
@@ -44,6 +44,9 @@
             <dd><input type="number" class="box" name="lv"></dd>
             <dt>系統補正値：</dt>
             <dd><input type="number" class="box" name="keizu"></dd>
+            <p><input type="button" class="calc-btn" onclick="calc(jissuu.value,kiso.value,ai.value,waku.value,lv.value,keizu.value);" value="計算"></p>
+            <dt>サイズ：</dt>
+            <dd><input id="leana" class="box" type="value" readonly=""></dd>
             <p>【行動回数補正】
                 AI1 : 1    AI1~2 : 0.9    AI2 : 0.8    AI2~3 : 0.7
             </p>
@@ -57,9 +60,6 @@
             </p>
             <div>
             </div>
-            <p><input type="button" class="calc-btn" onclick="calc(jissuu.value,kiso.value,ai.value,waku.value,lv.value,keizu.value);" value="計算"></p>
-            <dt>サイズ：</dt>
-            <dd><input id="leana" class="box" type="value" readonly=""></dd>
             <p>
                 物質　　　攻撃　 守備　　 賢さ
             </p>
@@ -87,13 +87,16 @@
         </dl>
     </form>
     <script>
-        function calc(jissuu,kiso,ai,waku,keizu,lv) {
+        function calc(syubi,kiso,ai,waku,keizu,lv) {
             let cl1 = (lv*keizu*0.0001)+1;
             let cl2 = (kiso * ai * waku);
             var a = Math.ceil(cl2);
             let cl3 = (a*cl1);
             var b = Math.floor(cl3);
-            const cl4 = document.getElementById('leana').value = jissuu-b+50;
+            const cl4 = document.getElementById('leana').value = syubi-b+50;
+            
+
+            
 
         }
     </script>
