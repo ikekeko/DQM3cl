@@ -32,14 +32,14 @@
     </style>
     <form class="size_form">
         <dl>
-            <dt><font size="7">守備力限界値：</font></dt>
+            <dt><font size="7">守備力実数値：</font></dt>
             <dd><input type="number" class="box" name="syubi"></dd>
             <dt><font size="7">守備力基礎値：</font></dt>
             <dd><input type="number" class="box" name="kiso"></dd>
             <dt><font size="7">行動回数補正：</font></dt>
-            <dd><input type="number" step="any" class="box" name="ai"></dd>
+            <dd><input type="number" class="box" name="ai"></dd>
             <dt><font size="7">枠補正：</font></dt>
-            <dd><input type="number" step="any"class="box" name="waku"></dd>
+            <dd><input type="number" class="box" name="waku"></dd>
             <dt><font size="7">Lv合計値：</font></dt>
             <dd><input type="number" class="box" name="lv"></dd>
             <dt><font size="7">系統補正値：</font></dt>
@@ -47,42 +47,42 @@
             <p><input type="button" class="calc-btn" onclick="calc(syubi.value,kiso.value,ai.value,waku.value,lv.value,keizu.value);" value="計算"></p>
             <dt><font size="7">サイズ：</font></dt>
             <dd><input id="leana" class="box" type="value" readonly=""></dd>
-            <p>【行動回数補正】
-                AI1 : 1    AI1~2 : 0.9    AI2 : 0.8    AI2~3 : 0.7
+            <p><font size="7">【行動回数補正】
+                AI1 : 1    AI1~2 : 0.9    AI2 : 0.8    AI2~3 : 0.7</font>
             </p>
             <p>
-                【枠補正】
-                Sサイズの場合 1  Lサイズの場合 1.1
+                <font size="7">枠補正】
+                Sサイズの場合 1  Lサイズの場合 1.1</font>
             </p>
             <p>
-                【系統補正値】
-                ボーナス含む0~10
+                <font size="7">【系統補正値】
+                ボーナス含む0~10</font>
             </p>
             <div>
             </div>
             <p>
-            物質　　　攻撃　 守備　　 賢さ
+                <font size="5"> 物質　　　攻撃　 守備　　 賢さ</font>
             </p>
             <p>
-            悪魔　　　MP 　  攻撃　　 守備
+                <font size="5">悪魔　　　MP 　  攻撃　　 守備</font>
             </p>
             <p>
-            ドラゴン　HP　　 MP　　  攻撃
+                <font size="5">ドラゴン　HP　　 MP　　  攻撃</font>
             </p>
             <p>
-            ？？？　　HP　　 攻撃　　賢さ
+                <font size="5">？？？　　HP　　 攻撃　　賢さ</font>
             </p>
             <p>
-            自然　　　守備　  素早さ　賢さ
+                <font size="5">自然　　　守備　  素早さ　賢さ</font>
             </p>
             <p>
-            スライム　HP　　 素早さ　賢さ
+                <font size="5">スライム　HP　　 素早さ　賢さ</font>
             </p>
             <p>
-            魔獣　　　MP　　守備　　素早さ
+                <font size="5">魔獣　　　MP　　守備　　素早さ</font>
             </p>
             <p>
-            ゾンビ　　HP　　 MP　　  素早さ
+                <font size="5">ゾンビ　　HP　　 MP　　  素早さ</font>
             </p>
         </dl>
     </form>
