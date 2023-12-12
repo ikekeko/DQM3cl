@@ -34,7 +34,9 @@
         <dl>
             <dt><font size="7">守備力実数値：</font></dt>
             <dd><input type="number" class="box" name="syubi"></dd>
-            <dt><font size="7">守備力基礎値：</font></dt>
+            <dt><font size="7">素早さ実数値：</font></dt>
+            <dd><input type="number" class="box" name="suba"></dd>
+            <dt><font size="7">基礎値：</font></dt>
             <dd><input type="number" class="box" name="kiso"></dd>
             <dt><font size="7">行動回数補正：</font></dt>
             <dd><input type="number" class="box" name="ai"></dd>
@@ -44,9 +46,11 @@
             <dd><input type="number" class="box" name="lv"></dd>
             <dt><font size="7">系統補正値：</font></dt>
             <dd><input type="number" class="box" name="keizu"></dd>
-            <p><input type="button" class="calc-btn" onclick="calc(syubi.value,kiso.value,ai.value,waku.value,lv.value,keizu.value);" value="計算"></p>
-            <dt><font size="7">サイズ：</font></dt>
+            <p><input type="button" class="calc-btn" onclick="calc(syubi.value,suba.value,kiso.value,ai.value,waku.value,lv.value,keizu.value);" value="計算"></p>
+            <dt><font size="7">サイズ守備力：</font></dt>
             <dd><input id="leana" class="box" type="value" readonly=""></dd>
+            <dt><font size="7">サイズ素早さ：</font></dt>
+            <dd><input id="leanb" class="box" type="value" readonly=""></dd>
             <p><font size="7">【行動回数補正】
                 AI1 : 1    AI1~2 : 0.9    AI2 : 0.8    AI2~3 : 0.7</font>
             </p>
@@ -87,16 +91,14 @@
         </dl>
     </form>
     <script>
-        function calc(syubi,kiso,ai,waku,keizu,lv) {
+        function calc(syubi,suba,kiso,ai,waku,keizu,lv) {
             let cl1 = (lv*keizu*0.0001)+1;
             let cl2 = (kiso * (ai *10) * (waku*10)) / 100;
             var a = Math.ceil(cl2);
             let cl3 = (a*cl1);
             var b = Math.floor(cl3);
             const cl4 = document.getElementById('leana').value = syubi-b+50;
-            
-
-            
+            const cl5 = document.getElementById('leanb').value = -suba+b+50;
 
         }
     </script>
