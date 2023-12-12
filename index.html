@@ -89,7 +89,7 @@
     <script>
         function calc(syubi,kiso,ai,waku,keizu,lv) {
             let cl1 = (lv*keizu*0.0001)+1;
-            let cl2 = (kiso * ai * waku);
+            let cl2 = (kiso * (ai *10) * (waku*10)) / 100;
             var a = Math.ceil(cl2);
             let cl3 = (a*cl1);
             var b = Math.floor(cl3);
